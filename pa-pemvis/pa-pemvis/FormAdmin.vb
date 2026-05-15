@@ -9,15 +9,12 @@ Public Class FormAdmin
     Private ReadOnly COLOR_HOVER As Color = Color.FromArgb(214, 219, 223)
     Private ReadOnly COLOR_ACTIVE As Color = Color.SteelBlue
 
-    ' Cache UserControl agar tidak di-instantiate ulang setiap klik
-    ' & state (misal: filter, scroll, input) tidak hilang saat berpindah menu
     Private ReadOnly pageCache As New Dictionary(Of Panel, UserControl)()
 
     ' ─────────────────────────────────────────────────────
-    ' LOAD FORM — Tampilkan halaman default
+    ' LOAD FORM 
     ' ─────────────────────────────────────────────────────
     Private Sub FormAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Ganti UCKandang() sesuai menu default yang Anda inginkan
         LoadPage(panelKandang, New uc_Kandang())
         SetMenuActive(panelKandang)
     End Sub
@@ -42,7 +39,6 @@ Public Class FormAdmin
         ResetMenu()
         menuPanel.BackColor = COLOR_HOVER
 
-        ' Aktifkan indikator yang sesuai
         Select Case menuPanel.Name
             Case "panelDashboard" : panelIndicatorDashboard.BackColor = COLOR_ACTIVE
             Case "panelKandang" : panelIndicatorKandang.BackColor = COLOR_ACTIVE
@@ -55,7 +51,7 @@ Public Class FormAdmin
     End Sub
 
     ' ═════════════════════════════════════════════════════
-    '  SHARED EVENT HANDLER (HOVER)
+    '  SHARED EVENT HANDLER 
     ' ═════════════════════════════════════════════════════
     Private Sub MenuPanels_MouseEnter(sender As Object, e As EventArgs) _
         Handles panelDashboard.MouseEnter, panelKandang.MouseEnter, panelPerawatan.MouseEnter,
@@ -99,7 +95,6 @@ Public Class FormAdmin
 
         SetMenuActive(pnl)
 
-        ' Routing berdasarkan nama panel
         Select Case pnl.Name
             Case "panelDashboard" : LoadPage(panelUtama, GetOrCreatePage(pnl, New uc_Dashboard()))
             Case "panelKandang" : LoadPage(panelUtama, GetOrCreatePage(pnl, New uc_Kandang()))
@@ -142,10 +137,6 @@ Public Class FormAdmin
                                      MessageBoxButtons.YesNo,
                                      MessageBoxIcon.Question)
         If result = DialogResult.Yes Then
-            ' TODO: Jika ada FormLogin, uncomment baris di bawah:
-            ' Dim frmLogin As New FormLogin()
-            ' frmLogin.Show()
-
             Application.Exit()
         End If
     End Sub
