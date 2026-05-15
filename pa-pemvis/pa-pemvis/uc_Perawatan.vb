@@ -1,10 +1,4 @@
-﻿' =========================================================
-' USERCONTROL: DATA PERAWATAN
-' File    : uc_Perawatan.vb
-' Kontrol : dgvPerawatan, txtNama, txtHarga, txtCari,
-'           btnSimpan, btnUpdate, btnHapus, btnCari
-' =========================================================
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Partial Public Class uc_Perawatan
     Dim selectedId As Integer = 0
