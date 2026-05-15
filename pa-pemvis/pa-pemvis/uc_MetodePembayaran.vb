@@ -1,10 +1,3 @@
-﻿' =========================================================
-' USERCONTROL: METODE PEMBAYARAN
-' File    : uc_MetodePembayaran.vb
-' Kontrol : dgvMetode, txtNama, txtCari,
-'           btnSimpan, btnUpdate, btnHapus, btnCari
-' =========================================================
-
 Imports MySql.Data.MySqlClient
 
 Partial Public Class uc_MetodePembayaran
@@ -89,7 +82,7 @@ Partial Public Class uc_MetodePembayaran
     End Sub
 
     ' ─────────────────────────────────────────────
-    ' TOMBOL SIMPAN — INSERT
+    ' TOMBOL SIMPAN 
     ' ─────────────────────────────────────────────
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
 
