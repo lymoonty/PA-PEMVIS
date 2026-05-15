@@ -39,8 +39,8 @@ pembagian pemvis pa
     - [ ] Print Invoice
     - [ ] Print Laporan
 * Lila
-    - [ ] Form Login & regis
-    - [ ] Form Data Kandang milik Admin (CRUD)
-    - [ ] Form Data Perawatan milik Admin (CRUD)
-    - [ ] Form Metode Pembayaran milik Admin (crud metode saja seperti qris, transfer, dll)
-    - [ ] Form Pengaturan Tarif milik Admin (update tarif)
+    - [x] Form Login 
+    - [x] Form Data Kandang milik Admin (CRUD)
+    - [x] Form Data Perawatan milik Admin (CRUD)
+    - [x] Form Metode Pembayaran milik Admin (crud metode saja seperti qris, transfer, dll)
+    - [x] Form Pengaturan Tarif milik Admin (update tarif)
