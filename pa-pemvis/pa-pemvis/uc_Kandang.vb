@@ -1,10 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
-' PERHATIAN: Pastikan Conn, CMD, DA, DT, OpenConnection(), dan CloseConnection() 
-' sudah didefinisikan di Module Koneksi atau BaseClass proyek Anda.
 Partial Public Class uc_Kandang
 
-    Dim selectedId As Integer = 0   ' 0 = belum ada baris dipilih
+    Dim selectedId As Integer = 0   
 
     ' ─────────────────────────────────────────────
     ' LOAD
@@ -76,9 +74,6 @@ Partial Public Class uc_Kandang
         btnHapus.Enabled = rowSelected
     End Sub
 
-    ' ─────────────────────────────────────────────
-    ' BERSIHKAN FORM
-    ' ─────────────────────────────────────────────
     Private Sub ClearForm()
         txtNomor.Clear()
         cbTipe.SelectedIndex = -1
@@ -89,9 +84,6 @@ Partial Public Class uc_Kandang
         dgvKandang.ClearSelection()
     End Sub
 
-    ' ─────────────────────────────────────────────
-    ' KLIK BARIS DGV → ISI FORM
-    ' ─────────────────────────────────────────────
     Private Sub dgvKandang_CellClick(sender As Object, e As DataGridViewCellEventArgs) _
         Handles dgvKandang.CellClick
 
@@ -109,7 +101,7 @@ Partial Public Class uc_Kandang
     End Sub
 
     ' ─────────────────────────────────────────────
-    ' TOMBOL SIMPAN — INSERT
+    ' TOMBOL SIMPAN 
     ' ─────────────────────────────────────────────
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
         If Not ValidasiInput() Then Exit Sub
@@ -141,7 +133,7 @@ Partial Public Class uc_Kandang
     End Sub
 
     ' ─────────────────────────────────────────────
-    ' TOMBOL UPDATE — UPDATE baris terpilih
+    ' TOMBOL UPDATE 
     ' ─────────────────────────────────────────────
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
         If selectedId = 0 Then
